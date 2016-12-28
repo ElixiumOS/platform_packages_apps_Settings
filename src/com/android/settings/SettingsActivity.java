@@ -1023,11 +1023,32 @@ public class SettingsActivity extends SettingsDrawerActivity
         transaction.commitAllowingStateLoss();
     }
 
+    private boolean packageExists(String packageName) {
+        final PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (NameNotFoundException e) {
+        }
+        return false;
+    }
+
     /**
      * Switch to a specific Fragment with taking care of validation, Title and BackStack
      */
     private Fragment switchToFragment(String fragmentName, Bundle args, boolean validate,
             boolean addToBackStack, int titleResId, CharSequence title, boolean withTransition) {
+
+        final String simSettingsPackage = "com.qualcomm.qti.simsettings";
+        if (packageExists(simSettingsPackage)
+                    && fragmentName.equals(SimSettings.class.getName())) {
+            Intent intent = new Intent("com.android.settings.sim.SIM_SUB_INFO_SETTINGS");
+            intent.setPackage(simSettingsPackage);
+            startActivity(intent);
+            finish();
+            return null;
+        }
+
         if (SUPERSU_FRAGMENT.equals(fragmentName)) {
             Intent superSUIntent = new Intent();
             superSUIntent.setClassName("eu.chainfire.supersu", "eu.chainfire.supersu.MainActivity");
