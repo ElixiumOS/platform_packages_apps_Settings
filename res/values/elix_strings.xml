@@ -30,4 +30,9 @@
     <string name="mention2_title">Salvatore Festa</string>
     <string name="mention2_summary">Friend and helper, otherwise knowed like ValoxTech</string>
 
+    <!-- Night Display -->
+    <string name="night_display_warning">Please note that Night Light may increase battery consumption.</string>
+    <string name="night_display_hide">Do not show this warning</string>
+    <string name="night_display_ok">Ok</string>
+
 </resources>
