@@ -80,6 +80,12 @@
                 android:summary="@string/device_info_default"
                 settings:allowDividerAbove="true"
                 settings:allowDividerBelow="true"/>
+				
+       <!-- ROM information -->
+	<Preference
+               android:key="rom_info_about"
+               android:title="@string/rom_info_title"
+               android:fragment="com.android.settings.elix.RomAbout" />
 
         <!-- Device firmware version -->
         <Preference android:key="firmware_version"

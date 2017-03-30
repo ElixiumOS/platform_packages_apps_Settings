@@ -168,8 +168,13 @@
        <activity android:name="com.elix.dna.fragments.ButtonsSettingsActivity"
                  android:label="@string/buttons_pref_title"
                  android:theme="@style/AppTheme">
-        </activity>    				 
-       <!-- END DNA -->
+       </activity>
+
+       <activity android:name="com.android.settings.elix.RomAbout"
+                 android:label="@string/rom_info_title"
+                 android:theme="@style/AppTheme">
+       </activity>     				 
+       <!-- END DNA --> 
 
         <activity android:name=".Settings$DeviceSettings"
             android:label="@string/header_category_device">
