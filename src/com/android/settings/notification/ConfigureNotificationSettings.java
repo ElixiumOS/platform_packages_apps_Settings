@@ -94,6 +94,7 @@ public class ConfigureNotificationSettings extends SettingsPreferenceFragment {
             addPreferencesFromResource(R.xml.configure_notification_settings_profile);
             initLockscreenNotificationsForProfile();
         }
+
     }
 
     @Override
@@ -117,8 +118,8 @@ public class ConfigureNotificationSettings extends SettingsPreferenceFragment {
             Log.i(TAG, "Preference not found: " + KEY_NOTIFICATION_PULSE);
             return;
         }
-        if (true/*!getResources()
-                .getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)*/) {
+        if (!getResources()
+                .getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
             getPreferenceScreen().removePreference(mNotificationPulse);
         } else {
             updatePulse();

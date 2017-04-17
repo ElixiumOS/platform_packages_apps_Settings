@@ -154,22 +154,14 @@ public class Settings extends SettingsActivity {
     public static class WifiAPITestActivity extends SettingsActivity { /* empty */ }
     public static class WifiInfoActivity extends SettingsActivity { /* empty */ }
     public static class ButtonSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class BarsSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class MoreSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class LockscreenSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class StyleSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class LightsSettingsActivity extends SettingsActivity { /* empty */ }
 
     // Categories.
     public static class WirelessSettings extends SettingsActivity { /* empty */ }
     public static class DeviceSettings extends SettingsActivity { /* empty */ }
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
     public static class SystemSettings extends SettingsActivity { /* empty */ }
-    public static class OmniGears extends SettingsActivity { /* empty */ }
 
     public static class SuperSUActivity extends SettingsActivity { /* empty */ }
     public static class SuperUserActivity extends SettingsActivity { /* empty */ }
-    public static class DevicePartsActivity extends SettingsActivity { /* empty */ }
-    public static class OmniJawsSettingsActivity extends SettingsActivity { /* empty */ }
 
 }

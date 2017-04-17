@@ -139,14 +139,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.omnirom.omnigears.ButtonSettings;
-import org.omnirom.omnigears.interfacesettings.BarsSettings;
-import org.omnirom.omnigears.interfacesettings.LockscreenSettings;
-import org.omnirom.omnigears.interfacesettings.StyleSettings;
-import org.omnirom.omnigears.moresettings.MoreSettings;
-import org.omnirom.omnigears.moresettings.OmniJawsSettings;
-import org.omnirom.omnigears.lightssettings.LightsSettings;
-
 public class SettingsActivity extends SettingsDrawerActivity
         implements PreferenceManager.OnPreferenceTreeClickListener,
         PreferenceFragment.OnPreferenceStartFragmentCallback,
@@ -236,7 +228,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String SUPERSU_FRAGMENT = "com.android.settings.SuperSU";
     private static final String SUPERUSER_FRAGMENT = "com.android.settings.SuperUser";
-    private static final String DEVICE_PARTS_FRAGMENT = "org.omnirom.device.DeviceParts";
 
     public static final String KEY_HIDE_SUMMARY = "hide_summary";
     public static final String KEY_COLUMNS_COUNT = "columns_count";
@@ -275,14 +266,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             Settings.AccessibilitySettingsActivity.class.getName(),
             Settings.PrintSettingsActivity.class.getName(),
             Settings.PaymentSettingsActivity.class.getName(),
-            // OmniGears
-            Settings.DevicePartsActivity.class.getName(),
-            Settings.ButtonSettingsActivity.class.getName(),
-            Settings.BarsSettingsActivity.class.getName(),
-            Settings.MoreSettingsActivity.class.getName(),
-            Settings.LockscreenSettingsActivity.class.getName(),
-            Settings.StyleSettingsActivity.class.getName(),
-            Settings.LightsSettingsActivity.class.getName(),
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -380,15 +363,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             WifiInfo.class.getName(),
             MasterClear.class.getName(),
             NightDisplaySettings.class.getName(),
-            ButtonSettings.class.getName(),
-            BarsSettings.class.getName(),
-            MoreSettings.class.getName(),
-            LockscreenSettings.class.getName(),
             ManageDomainUrls.class.getName(),
-            AutomaticStorageManagerSettings.class.getName(),
-            StyleSettings.class.getName(),
-            LightsSettings.class.getName(),
-            OmniJawsSettings.class.getName(),
+            AutomaticStorageManagerSettings.class.getName()
     };
 
 
@@ -585,8 +561,7 @@ public class SettingsActivity extends SettingsDrawerActivity
                 || className.equals(Settings.WirelessSettings.class.getName())
                 || className.equals(Settings.DeviceSettings.class.getName())
                 || className.equals(Settings.PersonalSettings.class.getName())
-                || className.equals(Settings.SystemSettings.class.getName())
-                || className.equals(Settings.OmniGears.class.getName());
+                || className.equals(Settings.WirelessSettings.class.getName());
 
         // This is a "Sub Settings" when:
         // - this is a real SubSettings
@@ -1062,13 +1037,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
-        if (DEVICE_PARTS_FRAGMENT.equals(fragmentName)) {
-            Intent devicePartsIntent = new Intent();
-            devicePartsIntent.setClassName("org.omnirom.device", "org.omnirom.device.DeviceSettings");
-            startActivity(devicePartsIntent);
-            finish();
-            return null;
-        }
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1178,38 +1146,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.SuperUserActivity.class.getName()),
                 phhSupported, isAdmin, pm);
-
-        // Omni DeviceParts
-        boolean devicePartsSupported = false;
-        try {
-            devicePartsSupported = (getPackageManager().getPackageInfo("org.omnirom.device", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.DevicePartsActivity.class.getName()),
-                devicePartsSupported, isAdmin, pm);
-
-        // OmniGears
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.ButtonSettingsActivity.class.getName()),
-                true, isAdmin, pm);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.BarsSettingsActivity.class.getName()),
-                true, isAdmin, pm);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.MoreSettingsActivity.class.getName()),
-                true, isAdmin, pm);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.LockscreenSettingsActivity.class.getName()),
-                true, isAdmin, pm);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.StyleSettingsActivity.class.getName()),
-                true, isAdmin, pm);
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.LightsSettingsActivity.class.getName()),
-                getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)||
-                getResources().getBoolean(com.android.internal.R.bool.config_intrusiveBatteryLed),
-                isAdmin, pm);
 
         // Reveal development-only quick settings tiles
         DevelopmentTiles.setTilesEnabled(this, showDev);
@@ -1410,11 +1346,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             case R.id.hide_summary_menu:
                 boolean hideSummary = mAppPreferences.getBoolean(KEY_HIDE_SUMMARY, false);
                 mAppPreferences.edit().putBoolean(KEY_HIDE_SUMMARY, !hideSummary).commit();
-                // TODO remove after fun ended
-                this.getPackageManager().setComponentEnabledSetting(
-                        new ComponentName("com.android.settings", "com.android.settings.EasterFunActivity"),
-                        PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                        PackageManager.DONT_KILL_APP);
                 return true;
         }
         return super.onOptionsItemSelected(item);

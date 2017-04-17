@@ -135,14 +135,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Settings$OmniGears"
-            android:label="@string/omnigears_category_title">
-            <intent-filter android:priority="4">
-                <action android:name="com.android.settings.category.omnigears" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
         <activity android:name=".Settings$DeviceSettings"
             android:label="@string/header_category_device">
             <intent-filter android:priority="3">
@@ -2457,121 +2449,25 @@
         <activity android:name=".CryptKeeper$FadeToBlack"
             android:immersive="true"
             android:launchMode="singleTop"
-            android:theme="@style/CryptKeeperBlankTheme"
-        />
+            android:theme="@style/CryptKeeperBlankTheme" />
+
 
         <activity android:name=".CryptKeeperConfirm$Blank"
             android:immersive="true"
             android:launchMode="singleTop"
-            android:theme="@style/CryptKeeperBlankTheme"
-        />
-
-        <!-- Custom settings activity. -->
-        <activity android:name="Settings$BarsSettingsActivity"
-                android:label="@string/interface_bars_title"
-                android:icon="@drawable/ic_bars_tile">
-            <intent-filter android:priority="7">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.interfacesettings.BarsSettings" />
-        </activity>
-
-        <activity android:name="Settings$ButtonSettingsActivity"
-                android:label="@string/button_settings"
-                android:icon="@drawable/ic_settings_buttons">
-            <intent-filter android:priority="6">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.ButtonSettings" />
-        </activity>
-
-        <activity android:name="Settings$DevicePartsActivity"
-            android:label="@string/omni_device_parts"
-            android:icon="@drawable/ic_settings_omnigears"
-            android:taskAffinity="">
-            <intent-filter android:priority="5">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.device.DeviceParts" />
-        </activity>
-
-        <activity android:name="Settings$LockscreenSettingsActivity"
-                android:label="@string/interface_lockscreen_title"
-                android:icon="@drawable/ic_lockscreen_tile">
-            <intent-filter android:priority="4">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.interfacesettings.LockscreenSettings" />
-        </activity>
-
-        <activity android:name="Settings$StyleSettingsActivity"
-                  android:label="@string/interface_style_title"
-                  android:icon="@drawable/ic_settings_style">
-            <intent-filter android:priority="2">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="org.omnirom.omnigears.interfacesettings.StyleSettings" />
-        </activity>
-
-        <!--Ligths settings-->
-        <activity android:name="Settings$LightsSettingsActivity"
-                  android:label="@string/omni_lights_title"
-                  android:icon="@drawable/ic_settings_lights">
-            <intent-filter android:priority="3">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                       android:value="org.omnirom.omnigears.lightssettings.LightsSettings" />
-        </activity>
-
-        <activity android:name="Settings$MoreSettingsActivity"
-                android:label="@string/omnigears_category_title"
-                android:icon="@drawable/ic_settings_more">
-            <intent-filter android:priority="1">
-                <action android:name="com.android.settings.action.SETTINGS" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.category"
-                android:value="com.android.settings.category.omnigears" />
-            <meta-data android:name="com.android.settings.title"
-                android:resource="@string/more_settings_title" />
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.moresettings.MoreSettings" />
-        </activity>
+            android:theme="@style/CryptKeeperBlankTheme" />
+        
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
                 android:label="@string/crypt_keeper_encrypt_title">
             <intent-filter android:priority="1">
                 <action android:name="android.app.action.START_ENCRYPTION" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" /> 
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" /> 
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.CryptKeeperSettings" />
@@ -3221,30 +3117,5 @@
             android:enabled="@bool/config_has_help" />
 
         <!-- This is the longest AndroidManifest.xml ever. -->
-
-        <activity android:name="Settings$OmniJawsSettingsActivity"
-                  android:label="@string/weather_title" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="org.omnirom.omnigears.moresettings.OmniJawsSettings" />
-        </activity>
-        <receiver android:name="org.omnirom.omnigears.Startup" >
-            <intent-filter android:priority="100" >
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <activity android:name="EasterFunActivity"
-                  android:icon="@drawable/easter_egg"
-                  android:theme="@android:style/Theme.NoDisplay" >
-            <intent-filter android:priority="1">
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.android.settings.suggested.category.FUN" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.title"
-                       android:resource="@string/easter_settings_title" />
-        </activity>
     </application>
 </manifest>

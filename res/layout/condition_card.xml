@@ -59,7 +59,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="16dp"
+<<<<<<< HEAD
                 android:tint="@color/condition_card_expander_color" />
+=======
+                android:tint="?android:attr/textColorPrimaryInverse"/>
+>>>>>>> parent of 2ca10b0... Settings: restore nuked dark theme fix in condidion card
 
         </LinearLayout>
 
@@ -107,7 +111,7 @@
                     android:paddingStart="0dp"
                     android:alpha=".8"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/condition_card_first_button_text_color"
+                    android:textColor="?android:attr/textColorPrimaryInverse"
                     style="?android:attr/buttonBarButtonStyle" />
 
                 <Button
@@ -117,7 +121,7 @@
                     android:layout_weight="1"
                     android:alpha=".8"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/condition_card_second_button_text_color"
+                    android:textColor="?android:attr/textColorPrimaryInverse"
                     style="?android:attr/buttonBarButtonStyle" />
 
             </com.android.internal.widget.ButtonBarLayout>
