@@ -59,11 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:padding="16dp"
-<<<<<<< HEAD
                 android:tint="@color/condition_card_expander_color" />
-=======
-                android:tint="?android:attr/textColorPrimaryInverse"/>
->>>>>>> parent of 2ca10b0... Settings: restore nuked dark theme fix in condidion card
 
         </LinearLayout>
 
