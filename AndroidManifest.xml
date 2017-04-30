@@ -145,12 +145,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.elix.dna.Home"
+        <activity android:name="com.elix.dna.Splash$Home"
                   android:label="@string/app_name"
                   android:theme="@style/AppTheme">
        </activity>
 
-       <activity android:name="com.elix.dna.Home$AboutApp"
+       <activity  android:name="com.elix.dna.Splash$AboutApp"
                   android:label="@string/about_title"
                   android:theme="@style/AppTheme">
        </activity>
