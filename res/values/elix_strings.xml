@@ -17,15 +17,17 @@
 
 
     <!-- ElixiumOS About -->
-    <string name="rom_version_summary">v1.2 - 7.1.1_r28</string>
+    <string name="rom_version_summary">v1.2 - 7.1.2_r11</string>
     <string name="rom_version_title">ROM Version</string>
     <string name="rom_info_title">ROM Information</string>
-    <string name="rom_info_summary">ElixiumOS is based on AOSP-CAF with a lot of packages from DirtyUnicorns, the priority of our rom is the speed and the autonomy</string>
+    <string name="rom_info_summary">ElixiumOS is based on CAF with a lot of packages from other famous roms, the priority of our rom is the speed and the autonomy</string>
     <string name="devs_category">Developer</string>
     <string name="mj_dev_title">Alessandro Pasini</string>
     <string name="mj_dev_summary">AKA MasterJack1697</string>
     <string name="mentions_category">Mentions</string>
     <string name="mention1_title">Francesco Colella</string>
     <string name="mention1_summary">My master, otherwise knowed like mnemonyc</string>
+    <string name="mention2_title">Salvatore Festa</string>
+    <string name="mention2_summary">Friend and helper, otherwise knowed like ValoxTech</string>
 
 </resources>

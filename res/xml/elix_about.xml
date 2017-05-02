@@ -13,8 +13,8 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-	
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/rom_info_title" >
 	
     <!-- Logo -->
     <Preference
@@ -33,14 +33,14 @@
         android:title="@string/rom_version_title"
         android:summary="@string/rom_version_summary" />
     
-	<!-- Developers -->
+    <!-- Developers -->
     <PreferenceCategory
         android:key="category_devs"
         android:title="@string/devs_category">
 
         <PreferenceScreen
             android:title="@string/mj_dev_title"
-	        android:summary="@string/mj_dev_summary">
+	    android:summary="@string/mj_dev_summary">
 	    <intent
                 android:action="android.intent.action.VIEW"
                 android:data="https://plus.google.com/u/0/102451176704708715077" />
@@ -48,7 +48,7 @@
 
     </PreferenceCategory>
 
-	<!-- Honorable mentions -->
+    <!-- Honorable mentions -->
     <PreferenceCategory
         android:key="category_mentions"
         android:title="@string/mentions_category">
@@ -56,6 +56,10 @@
         <Preference
             android:title="@string/mention1_title"
             android:summary="@string/mention1_summary" />
+
+        <Preference
+            android:title="@string/mention2_title"
+            android:summary="@string/mention2_summary" />      
        	
     </PreferenceCategory>
     
