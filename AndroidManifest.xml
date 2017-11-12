@@ -3294,6 +3294,27 @@
             </intent-filter>
         </activity>
 
+        <!-- START DNA -->
+
+        <!-- Splash activity -->
+        <activity android:name="com.elix.dna.Splash"
+                android:theme="@style/SplashTheme"
+                android:label="@string/app_name"
+                android:icon="@drawable/ic_launcher_dna">
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Home activity -->
+        <activity android:name="com.elix.dna.Home"
+                android:label="@string/app_name"
+                android:theme="@style/AppTheme">
+        </activity>
+
+        <!-- END DNA -->
+
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
 </manifest>
