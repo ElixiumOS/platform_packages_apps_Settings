@@ -17,7 +17,9 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_USE_AAPT2 := true
 
-LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_SRC_FILES := \
+ 		$(call all-java-files-under, src) \
+    $(call all-java-files-under, ../DNA/src)
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
@@ -25,7 +27,15 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-recyclerview \
     android-support-v7-preference \
     android-support-v7-appcompat \
-    android-support-v14-preference
+    android-support-v14-preference \
+    android-support-v7-cardview
+
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+		frameworks/support/v7/cardview/res \
+	  packages/apps/DNA/res
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+    --extra-packages com.elix.dna
 
 LOCAL_JAVA_LIBRARIES := \
     bouncycastle \
